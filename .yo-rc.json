@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.app.iss",
+      "nativeLanguage": "ru"
+    },
+    "jhipsterVersion": "6.0.0",
+    "applicationType": "monolith",
+    "baseName": "ISS",
+    "packageName": "com.app.iss",
+    "packageFolder": "com/app/iss",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MzEyMjhlYTNiMTE3N2M5MWQwN2I2MDhmMGFkMTY1OThhODJmZTIyZmZkZGQ0MjQzMjU4ODhiZGM2MTMxMzEzZmYyNzNmODA5OGQxZDQzZjcyYTRiMTFkNWEyMWJiMjlmM2M5ZWU4ZjM3MzdhZDlhNGMzNjdhNmViZThjZDA2YzI=",
+    "clientFramework": "react",
+    "clientTheme": "cerulean",
+    "clientThemeVariant": "dark",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "ru",
+    "languages": [
+      "ru"
+    ]
+  }
+}
