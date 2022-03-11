@@ -1,0 +1,19 @@
+{
+  "issApp": {
+    "VidStrahovaniya": {
+      "null": "",
+      "LIFE": "LIFE",
+      "MEDICAL": "MEDICAL",
+      "TRANSPORT": "TRANSPORT",
+      "FINANCIAL": "FINANCIAL",
+      "PROPERTY": "PROPERTY",
+      "STAFF": "STAFF",
+      "PENSIONS": "PENSIONS",
+      "CONSTRUCTION_RISKS": "CONSTRUCTION_RISKS",
+      "CARGO": "CARGO",
+      "TRANSIT": "TRANSIT",
+      "ACCIDENT": "ACCIDENT",
+      "BORROWER": "BORROWER"
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+    "name": "Record",
+    "fields": [
+        {
+            "fieldName": "idDogovora",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "minlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 10,
+            "fieldValidateRulesMinlength": 10
+        },
+        {
+            "fieldName": "vidStrahovaniya",
+            "fieldType": "VidStrahovaniya",
+            "fieldValues": "LIFE,MEDICAL,TRANSPORT,FINANCIAL,PROPERTY,STAFF,PENSIONS,CONSTRUCTION_RISKS,CARGO,TRANSIT,ACCIDENT,BORROWER"
+        },
+        {
+            "fieldName": "strahovayaSumma",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tarifnayaStavka",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "filial",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "strahovoyPlatej",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "procent",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dataZaklucheniya",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "srokIstecheniya",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "strahovoySluchay",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stoimostVgod",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idClient",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "minlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 10,
+            "fieldValidateRulesMinlength": 10
+        },
+        {
+            "fieldName": "fioClient",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "passportClient",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephoneClient",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addressClient",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "kodAgent",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "minlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 10,
+            "fieldValidateRulesMinlength": 10
+        },
+        {
+            "fieldName": "fioAgent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephoneAgent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "passportAgent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addressAgent",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20220311181649",
+    "entityTableName": "record",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

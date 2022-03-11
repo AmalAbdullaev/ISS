@@ -1,0 +1,41 @@
+{
+  "issApp": {
+    "record": {
+      "home": {
+        "title": "Records",
+        "createLabel": "Создать новый Record",
+        "createOrEditLabel": "Создать или отредактировать Record"
+      },
+      "created": "Новый Record создан с идентификатором {{ param }}",
+      "updated": "Record обновлен с идентификатором {{ param }}",
+      "deleted": "Record удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Record {{ id }}?"
+      },
+      "detail": {
+        "title": "Record"
+      },
+      "idDogovora": "Id Dogovora",
+      "vidStrahovaniya": "Vid Strahovaniya",
+      "strahovayaSumma": "Strahovaya Summa",
+      "tarifnayaStavka": "Tarifnaya Stavka",
+      "filial": "Filial",
+      "strahovoyPlatej": "Strahovoy Platej",
+      "procent": "Procent",
+      "dataZaklucheniya": "Data Zaklucheniya",
+      "srokIstecheniya": "Srok Istecheniya",
+      "strahovoySluchay": "Strahovoy Sluchay",
+      "stoimostVgod": "Stoimost Vgod",
+      "idClient": "Id Client",
+      "fioClient": "Fio Client",
+      "passportClient": "Passport Client",
+      "telephoneClient": "Telephone Client",
+      "addressClient": "Address Client",
+      "kodAgent": "Kod Agent",
+      "fioAgent": "Fio Agent",
+      "telephoneAgent": "Telephone Agent",
+      "passportAgent": "Passport Agent",
+      "addressAgent": "Address Agent"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+entity Record {
+    IdDogovora String maxlength(10) minlength(10) required
+    vidStrahovaniya VidStrahovaniya
+    strahovayaSumma Integer
+    tarifnayaStavka Integer
+    filial String
+    strahovoyPlatej Integer
+    procent Integer
+    dataZaklucheniya ZonedDateTime
+    srokIstecheniya ZonedDateTime
+    strahovoySluchay String
+    stoimostVgod Integer
+    IdClient String maxlength(10) minlength(10) required
+    FioClient String
+    passportClient String
+    telephoneClient String
+    addressClient String
+    kodAgent String maxlength(10) minlength(10) required
+    fioAgent String
+    telephoneAgent String
+    passportAgent String
+    addressAgent String
+}
+
+enum VidStrahovaniya {
+    LIFE, // Страхование жизни
+    MEDICAL, // Медицинское Страхование
+    TRANSPORT, // Транспортное 
+    FINANCIAL, // Финансовое
+    PROPERTY, // Страхование имущества
+    STAFF, // Страхование сотрудников
+    PENSIONS,  // Пенсионное страхование
+    CONSTRUCTION_RISKS, // Строительно-монтажные риски
+    CARGO, // Страхование грузов
+    TRANSIT,  // Страхование перевозчиков
+    ACCIDENT, // Несчастные случаи
+    BORROWER // Страхование заемщиков
+}
+
+paginate Record with pagination
+service all with serviceImpl except Record
