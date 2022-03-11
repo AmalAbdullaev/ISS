@@ -13,6 +13,7 @@ import { IRecord } from 'app/shared/model/record.model';
 // tslint:disable-next-line:no-unused-variable
 import { convertDateTimeFromServer, convertDateTimeToServer } from 'app/shared/util/date-utils';
 import { mapIdList } from 'app/shared/util/entity-utils';
+import { insuranceTypeMap, InsuranseType } from 'app/shared/util/insurance-type-map';
 
 export interface IRecordUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
@@ -118,42 +119,9 @@ export class RecordUpdate extends React.Component<IRecordUpdateProps, IRecordUpd
                     name="vidStrahovaniya"
                     value={(!isNew && recordEntity.vidStrahovaniya) || 'LIFE'}
                   >
-                    <option value="LIFE">
-                      <Translate contentKey="issApp.VidStrahovaniya.LIFE" />
-                    </option>
-                    <option value="MEDICAL">
-                      <Translate contentKey="issApp.VidStrahovaniya.MEDICAL" />
-                    </option>
-                    <option value="TRANSPORT">
-                      <Translate contentKey="issApp.VidStrahovaniya.TRANSPORT" />
-                    </option>
-                    <option value="FINANCIAL">
-                      <Translate contentKey="issApp.VidStrahovaniya.FINANCIAL" />
-                    </option>
-                    <option value="PROPERTY">
-                      <Translate contentKey="issApp.VidStrahovaniya.PROPERTY" />
-                    </option>
-                    <option value="STAFF">
-                      <Translate contentKey="issApp.VidStrahovaniya.STAFF" />
-                    </option>
-                    <option value="PENSIONS">
-                      <Translate contentKey="issApp.VidStrahovaniya.PENSIONS" />
-                    </option>
-                    <option value="CONSTRUCTION_RISKS">
-                      <Translate contentKey="issApp.VidStrahovaniya.CONSTRUCTION_RISKS" />
-                    </option>
-                    <option value="CARGO">
-                      <Translate contentKey="issApp.VidStrahovaniya.CARGO" />
-                    </option>
-                    <option value="TRANSIT">
-                      <Translate contentKey="issApp.VidStrahovaniya.TRANSIT" />
-                    </option>
-                    <option value="ACCIDENT">
-                      <Translate contentKey="issApp.VidStrahovaniya.ACCIDENT" />
-                    </option>
-                    <option value="BORROWER">
-                      <Translate contentKey="issApp.VidStrahovaniya.BORROWER" />
-                    </option>
+                    {Object.keys(InsuranseType).map(type => (
+                      <option value={type}>{insuranceTypeMap[type]}</option>
+                    ))}
                   </AvInput>
                 </AvGroup>
                 <AvGroup>
