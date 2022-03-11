@@ -3,6 +3,10 @@
 // Import Bootstrap source files from node_modules
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import '~bootswatch/dist/cerulean/bootswatch';
+
+@import 'main.css';
+@import 'main2.css';
+
 body {
   margin: 0;
 }
