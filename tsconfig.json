@@ -9,6 +9,7 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false,
+    "skipLibCheck": true,
     "suppressImplicitAnyIndexErrors": true,
     "outDir": "target/classes/static/app",
     "lib": ["es2015", "es2017", "dom"],
@@ -25,5 +26,5 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["src/main/webapp/app/typing.d.ts", "src/main/webapp/app/**/*", "src/test/javascript/spec/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["/node_modules/", "node_modules/**/*"]
 }
