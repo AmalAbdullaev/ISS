@@ -25,8 +25,8 @@ export const Brand = props => (
 
 export const Home = props => (
   <NavItem>
-    <NavLink tag={Link} to="/" className="d-flex align-items-center">
-      <FontAwesomeIcon icon="home" />
+    <NavLink tag={Link} to="/" className="d-flex align-items-center text-dark">
+      <FontAwesomeIcon style={{ marginRight: '5px' }} icon="home" />
       <span>
         <Translate contentKey="global.menu.home">Home</Translate>
       </span>
