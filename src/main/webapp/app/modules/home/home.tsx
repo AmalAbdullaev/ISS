@@ -4,7 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Col, Card, Row, Button, Dropdown, ButtonGroup } from '@themesberg/react-bootstrap';
 import { getSession } from 'app/shared/reducers/authentication';
 import { SalesValueChart } from 'app/shared/charts/Charts';
@@ -23,9 +23,9 @@ export class Home extends React.Component<IHomeProp> {
       <>
         <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-4">
           <Dropdown className="btn-toolbar">
-            <Button variant="primary" size="sm" className="me-2">
-              <FontAwesomeIcon icon={faPlus} className="me-2" />
-              Создать договор
+            <Button href="/entity/record" variant="primary" size="sm" className="me-2">
+              <FontAwesomeIcon icon={faArrowRight} className="me-2" />
+              Перейти в базу договоров
             </Button>
           </Dropdown>
 

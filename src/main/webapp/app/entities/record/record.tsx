@@ -1,7 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
-import { Button, Col, Row, Table } from 'reactstrap';
+import { faCheck, faPlus, faHome, faSearch } from '@fortawesome/free-solid-svg-icons';
+import moment from 'moment';
+// import { Button, Col, Row, Table } from 'reactstrap';
+import {
+  Col,
+  Row,
+  Nav,
+  Card,
+  Image,
+  Button,
+  Table,
+  Dropdown,
+  Form,
+  Pagination,
+  ButtonGroup,
+  InputGroup
+} from '@themesberg/react-bootstrap';
+
 // tslint:disable-next-line:no-unused-variable
 import {
   Translate,
@@ -20,6 +37,7 @@ import { IRecord } from 'app/shared/model/record.model';
 // tslint:disable-next-line:no-unused-variable
 import { APP_DATE_FORMAT, APP_LOCAL_DATE_FORMAT } from 'app/config/constants';
 import { ITEMS_PER_PAGE } from 'app/shared/util/pagination.constants';
+import { insuranceTypeMap } from 'app/shared/util/insurance-type-map';
 
 export interface IRecordProps extends StateProps, DispatchProps, RouteComponentProps<{ url: string }> {}
 
@@ -56,19 +74,108 @@ export class Record extends React.Component<IRecordProps, IRecordState> {
     this.props.getEntities(activePage - 1, itemsPerPage, `${sort},${order}`);
   };
 
+  TableRow = (record: any) => {
+    const { match } = this.props;
+    return (
+      <tr key={record.idDogovora}>
+        <td>{record.idDogovora}</td>
+        <td>{insuranceTypeMap[record.vidStrahovaniya]}</td>
+        <td>{record.filial}</td>
+        <td>{record.dataZaklucheniya && moment(record.dataZaklucheniya.toString()).format('MMMM DD YYYY')}</td>
+        <td>{record.srokIstecheniya && moment(record.srokIstecheniya.toString()).format('MMMM DD YYYY')}</td>
+        <td>{record.strahovoyPlatej}</td>
+        <td>{record.idClient}</td>
+        <td className="text-right">
+          <div className="btn-group flex-btn-group-container">
+            <Button href={`${match.url}/${record.id}/edit`} variant="secondary" size="sm">
+              <FontAwesomeIcon icon="pencil-alt" />{' '}
+              <span className="d-none d-md-inline">
+                <Translate contentKey="entity.action.edit">Edit</Translate>
+              </span>
+            </Button>
+            <Button href={`${match.url}/${record.id}/delete`} variant="danger" size="sm">
+              <FontAwesomeIcon icon="trash" />{' '}
+              <span className="d-none d-md-inline">
+                <Translate contentKey="entity.action.delete">Delete</Translate>
+              </span>
+            </Button>
+          </div>
+        </td>
+      </tr>
+    );
+  };
+
   render() {
     const { recordList, match, totalItems } = this.props;
     return (
       <div>
-        <h2 id="record-heading">
-          <Translate contentKey="issApp.record.home.title">Records</Translate>
-          <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
-            <FontAwesomeIcon icon="plus" />
-            &nbsp;
-            <Translate contentKey="issApp.record.home.createLabel">Create new Record</Translate>
-          </Link>
-        </h2>
-        <div className="table-responsive">
+        <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+          <div className="d-block mb-4 mb-md-0">
+            <h4>Страховые договоры</h4>
+            <p className="mb-0">Список договоров</p>
+          </div>
+          <div className="btn-toolbar mb-2 mb-md-0">
+            <ButtonGroup>
+              <Button variant="outline-primary" size="sm">
+                Поделиться
+              </Button>
+              <Button variant="outline-primary" size="sm">
+                Экспортировать
+              </Button>
+            </ButtonGroup>
+          </div>
+        </div>
+
+        <div className="table-settings mb-4">
+          <Row className="justify-content-between align-items-center">
+            <Col xs={8} md={6} lg={3} xl={4}>
+              <InputGroup>
+                <InputGroup.Text>
+                  <FontAwesomeIcon icon={faSearch} />
+                </InputGroup.Text>
+                <Form.Control type="text" placeholder="Поиск" />
+              </InputGroup>
+            </Col>
+            <Col xs={4} className="ps-md-0 text-end">
+              <Button href={`${match.url}/new`} className="btn btn-primary">
+                <FontAwesomeIcon icon={faPlus} className="me-2" />
+                Создать договор
+              </Button>
+            </Col>
+          </Row>
+        </div>
+        <Card border="light" className="table-wrapper table-responsive shadow-sm">
+          <Card.Body className="pt-0">
+            <Table hover className="user-table align-items-center">
+              <thead>
+                <tr>
+                  <th className="border-bottom">ID договора</th>
+                  <th className="border-bottom">Вид страхования</th>
+                  <th className="border-bottom">Филиал</th>
+                  <th className="border-bottom">Дата заключения</th>
+                  <th className="border-bottom">Срок истечения</th>
+                  <th className="border-bottom">Платеж</th>
+                  <th className="border-bottom">Код клиента</th>
+                </tr>
+              </thead>
+              <tbody>{recordList.map(t => this.TableRow(t))}</tbody>
+            </Table>
+            <Card.Footer className="px-3 border-0 d-lg-flex align-items-center justify-content-between">
+              <Nav>
+                <JhiPagination
+                  items={getPaginationItemsNumber(totalItems, this.state.itemsPerPage)}
+                  activePage={this.state.activePage}
+                  onSelect={this.handlePagination}
+                  maxButtons={5}
+                />
+              </Nav>
+              <small className="fw-bold">
+                Всего <b>{totalItems}</b> записей
+              </small>
+            </Card.Footer>
+          </Card.Body>
+        </Card>
+        {/* <div className="table-responsive">
           <Table responsive>
             <thead>
               <tr>
@@ -210,7 +317,7 @@ export class Record extends React.Component<IRecordProps, IRecordState> {
             onSelect={this.handlePagination}
             maxButtons={5}
           />
-        </Row>
+        </Row> */}
       </div>
     );
   }
