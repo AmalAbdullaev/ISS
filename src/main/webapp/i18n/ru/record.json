@@ -2,40 +2,40 @@
   "issApp": {
     "record": {
       "home": {
-        "title": "Records",
-        "createLabel": "Создать новый Record",
-        "createOrEditLabel": "Создать или отредактировать Record"
+        "title": "Договоры",
+        "createLabel": "Создать новый Договор",
+        "createOrEditLabel": "Создать или отредактировать Договор"
       },
-      "created": "Новый Record создан с идентификатором {{ param }}",
-      "updated": "Record обновлен с идентификатором {{ param }}",
-      "deleted": "Record удален с идентификатором {{ param }}",
+      "created": "Новый Договор создан с идентификатором {{ param }}",
+      "updated": "Договор обновлен с идентификатором {{ param }}",
+      "deleted": "Договор удален с идентификатором {{ param }}",
       "delete": {
-        "question": "Вы уверены что хотите удалить Record {{ id }}?"
+        "question": "Вы уверены что хотите удалить договор №{{ id }}?"
       },
       "detail": {
-        "title": "Record"
+        "title": "Договор"
       },
-      "idDogovora": "Id Dogovora",
-      "vidStrahovaniya": "Vid Strahovaniya",
-      "strahovayaSumma": "Strahovaya Summa",
-      "tarifnayaStavka": "Tarifnaya Stavka",
-      "filial": "Filial",
-      "strahovoyPlatej": "Strahovoy Platej",
-      "procent": "Procent",
-      "dataZaklucheniya": "Data Zaklucheniya",
-      "srokIstecheniya": "Srok Istecheniya",
-      "strahovoySluchay": "Strahovoy Sluchay",
-      "stoimostVgod": "Stoimost Vgod",
-      "idClient": "Id Client",
-      "fioClient": "Fio Client",
-      "passportClient": "Passport Client",
-      "telephoneClient": "Telephone Client",
-      "addressClient": "Address Client",
-      "kodAgent": "Kod Agent",
-      "fioAgent": "Fio Agent",
-      "telephoneAgent": "Telephone Agent",
-      "passportAgent": "Passport Agent",
-      "addressAgent": "Address Agent"
+      "idDogovora": "Id Договора",
+      "vidStrahovaniya": "Вид страхования",
+      "strahovayaSumma": "Страховая сумма",
+      "tarifnayaStavka": "Тарифная ставка",
+      "filial": "Филиал",
+      "strahovoyPlatej": "Страховой платеж",
+      "procent": "Процент",
+      "dataZaklucheniya": "Дата заключения",
+      "srokIstecheniya": "Срок истечения",
+      "strahovoySluchay": "Страховой случай",
+      "stoimostVgod": "Стоимость в год",
+      "idClient": "Id Клиента",
+      "fioClient": "ФИО Клиента",
+      "passportClient": "Паспорт клиента",
+      "telephoneClient": "Телефон Клиента",
+      "addressClient": "Адрес клиента",
+      "kodAgent": "Код агента",
+      "fioAgent": "ФИО Агента",
+      "telephoneAgent": "Телефон агента",
+      "passportAgent": "Паспорт агента",
+      "addressAgent": "Адрес агента"
     }
   }
 }

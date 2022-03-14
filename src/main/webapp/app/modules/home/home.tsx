@@ -8,6 +8,8 @@ import { faArrowRight, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Col, Card, Row, Button, Dropdown, ButtonGroup } from '@themesberg/react-bootstrap';
 import { getSession } from 'app/shared/reducers/authentication';
 import { SalesValueChart } from 'app/shared/charts/Charts';
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import moment from 'moment';
 
 export interface IHomeProp extends StateProps, DispatchProps {}
 
@@ -18,10 +20,11 @@ export class Home extends React.Component<IHomeProp> {
 
   render() {
     const { account } = this.props;
+    const localizer = momentLocalizer(moment);
 
     return (
       <>
-        <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-4">
+        <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-4 pt-4">
           <Dropdown className="btn-toolbar">
             <Button href="/entity/record" variant="primary" size="sm" className="me-2">
               <FontAwesomeIcon icon={faArrowRight} className="me-2" />
@@ -65,6 +68,11 @@ export class Home extends React.Component<IHomeProp> {
                 <SalesValueChart />
               </Card.Body>
             </Card>
+          </Col>
+        </Row>
+        <Row className="justify-content-md-center">
+          <Col xs={12} className="mb-4 d-none d-sm-block">
+            <Calendar localizer={localizer} events={[]} startAccessor="start" endAccessor="end" style={{ height: 500 }} />
           </Col>
         </Row>
       </>

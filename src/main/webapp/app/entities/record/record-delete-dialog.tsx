@@ -34,7 +34,7 @@ export class RecordDeleteDialog extends React.Component<IRecordDeleteDialogProps
           <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
         </ModalHeader>
         <ModalBody id="issApp.record.delete.question">
-          <Translate contentKey="issApp.record.delete.question" interpolate={{ id: recordEntity.id }}>
+          <Translate contentKey="issApp.record.delete.question" interpolate={{ id: recordEntity.idDogovora }}>
             Are you sure you want to delete this Record?
           </Translate>
         </ModalBody>

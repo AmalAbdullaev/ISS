@@ -216,7 +216,7 @@ export class RecordUpdate extends React.Component<IRecordUpdateProps, IRecordUpd
                 <Col sm={6} className="mb-3">
                   <AvGroup id="fioClient">
                     <Label>ФИО клиента</Label>
-                    <AvField id="record-fioClient" type="string" name="fioClient" />
+                    <AvField id="record-fioClient" type="string" name="fioClient" placeholder="ФИО клиента" />
                   </AvGroup>
                 </Col>
               </Row>
@@ -283,8 +283,8 @@ export class RecordUpdate extends React.Component<IRecordUpdateProps, IRecordUpd
               <Row>
                 <Col sm={6} className="mb-3">
                   <AvGroup id="addressAgent">
-                    <Label>Адресс агента</Label>
-                    <AvField name="addressAgent" type="string" placeholder="Адресс агента" />
+                    <Label>Адрес агента</Label>
+                    <AvField name="addressAgent" type="string" placeholder="Адрес агента" />
                   </AvGroup>
                 </Col>
               </Row>
