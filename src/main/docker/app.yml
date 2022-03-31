@@ -1,7 +1,7 @@
 version: '2'
 services:
   iss-app:
-    image: iss
+    image: dockertls12345/iss
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,swagger
